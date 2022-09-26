@@ -85,7 +85,7 @@ span{
 
 .btn-group button {
     margin-top: 30px;    
-    background-color: #4E44CE; /* Green background */
+    background-color: #4E44CE; /* purple background */
     color: white; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */

@@ -61,7 +61,7 @@
 
 .btn-group button {
     margin-top: 1px;    
-    background-color: #222324; /* Green background */
+    background-color: #222324; /* black background */
     color: white; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
