@@ -1,13 +1,24 @@
 <template>
   <div class="HomePage">
-    
+    <HeaderWeb />
+
+    <p>asad</p>
   </div>
 </template>
 
-<style>
-
-</style>
-
 <script>
+import HeaderWeb from "@/components/HeaderWeb.vue";
+
+export default {
+  name: "HomePage",
+  components: {
+    HeaderWeb,
+
+  },
+};
 
 </script>
+
+<style scoped>
+
+</style>
