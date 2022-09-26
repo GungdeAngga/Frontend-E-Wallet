@@ -1,23 +1,25 @@
 <template>
-  <div class="HomePage">
+    <div class="TopUpPage">
     <HeaderWeb />
-    <MainContateWeb />
+    <TransferContent />
     <FooterMenuWeb />
-  </div>
+
+    </div>
 </template>
 
 <script>
 import HeaderWeb from "@/components/HeaderWeb.vue";
-import MainContateWeb from "../components/MainContateWeb.vue";
 import FooterMenuWeb from "../components/FooterMenuWeb.vue";
+import TransferContent from "../components/TransferContent.vue";
+
 
 
 export default {
   name: "HomePage",
   components: {
     HeaderWeb,
-    MainContateWeb,
-    FooterMenuWeb
+    FooterMenuWeb,
+    TransferContent
 },
 };
 

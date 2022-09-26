@@ -12,7 +12,7 @@
                         <span class="caption">Topup</span>
                     </router-link>
 
-                    <router-link to="/" tag="button" class="btn" >
+                    <router-link to="/transfer" tag="button" class="btn" >
                         <img src="@/assets/image/paper-plane-free-icon-font.png" alt="transfer" style="height: 65%;">
                         <span class="caption">Transfer</span>
                     </router-link>
