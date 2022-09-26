@@ -40,7 +40,7 @@ name: "HeaderWeb",
   width: 100%;
   display: flex;
   padding-top: 50px;
-  padding-left: 35%;
+  padding-left: 33.5%;
 }
 
 .headerText{
@@ -53,6 +53,6 @@ name: "HeaderWeb",
   width: 40px;
   height: 40px;
   margin-left: 200px;
-  margin-right: 50%;
+  margin-right: 50.5%;
 }
 </style>
