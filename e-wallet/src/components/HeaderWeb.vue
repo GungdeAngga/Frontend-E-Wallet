@@ -1,27 +1,49 @@
 <template>
-  <fixed-header>
+
       <div class="HeaderWeb">
-          <h2>Corsair</h2>
+          <span>Corsair</span>
+
+          <router-link to="/" tag="button" class="btn" >
+            <img src="@/assets/image/interrogation-free-icon-font.png" alt="support" style=" width: 100%">
+          </router-link>
       </div>
-  </fixed-header>    
+  
 </template>>
 
 <script>
-import FixedHeader from 'vue-fixed-header'
+
 
 export default {
 name: "HeaderWeb",
   components: {
-  FixedHeader
+
 }
 };
 </script>
 
 <style scoped>
-.navbar.vue-fixed-header--isFixed {
-position: fixed;
-left: 0;
-top: 0;
-width: 100vw;
+.HeaderWeb{
+  overflow: hidden;
+  background-color: #4E44CE;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 40%;
+  height: 90px;
+  padding-top: 50px;
+}
+
+span{
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.btn{
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 200px;
 }
 </style>
