@@ -9,8 +9,8 @@
                         <span class="caption">Home</span>
                     </router-link>
 
-                    <router-link to="/" tag="button" class="btn" >
-                        <img src="@/assets/image/time-past-free-icon-font.png" alt="Transfer" style="height: 45%;">
+                    <router-link to="/history" tag="button" class="btn" >
+                        <img src="@/assets/image/time-past-free-icon-font.png" alt="History" style="height: 45%;">
                         <span class="caption">History</span>
                     </router-link>
 
