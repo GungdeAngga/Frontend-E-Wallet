@@ -56,6 +56,7 @@
 
 .caption {
     display: block;
+    padding-top: 5px;
 }
 
 .btn-group button {
