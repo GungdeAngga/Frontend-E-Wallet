@@ -7,7 +7,7 @@
 
                 <div class="btn-group" style="width:100%">
 
-                    <router-link to="/" tag="button" class="btn" >
+                    <router-link to="/topup" tag="button" class="btn" >
                         <img src="@/assets/image/add-free-icon-font.png" alt="topup" style="height: 65%;">
                         <span class="caption">Topup</span>
                     </router-link>
@@ -39,7 +39,7 @@
 
 </script>
 
-<style>
+<style scopped>
 #MainContent{
 
     height: 100%;
