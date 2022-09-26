@@ -17,7 +17,7 @@
                         <span class="caption">Transfer</span>
                     </router-link>
 
-                    <router-link to="/" tag="button" class="btn" >
+                    <router-link to="/withdraw" tag="button" class="btn" >
                         <img src="@/assets/image/money-bill-wave-free-icon-font.png" alt="withdraw" style="height: 65%;">
                         <span class="caption">withdraw</span>
                     </router-link>
