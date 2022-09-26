@@ -1,12 +1,26 @@
 <template>
 
-      <div class="HeaderWeb">
-          <span>Corsair</span>
+
+    <div>
+        <v-app-bar
+          color="#4E45CE"
+          padless
+          dark
+          style="height: 140px;"
+        >
+          <div class="header">
+            <span class="headerText">Corsair</span>
+
+            <v-spacer></v-spacer>
 
           <router-link to="/" tag="button" class="btn" >
-            <img src="@/assets/image/interrogation-free-icon-font.png" alt="support" style=" width: 100%">
+          <img src="@/assets/image/interrogation-free-icon-font.png" alt="support" style=" width: 100%">
           </router-link>
-      </div>
+
+            
+          </div>
+        </v-app-bar>
+    </div>
   
 </template>>
 
@@ -22,20 +36,14 @@ name: "HeaderWeb",
 </script>
 
 <style scoped>
-.HeaderWeb{
-  overflow: hidden;
-  background-color: #4E44CE;
-  position: fixed;
-  top: 0;
-  left: 0;
+.header{
   width: 100%;
-  padding-left: 40%;
-  height: 90px;
+  display: flex;
   padding-top: 50px;
+  padding-left: 35%;
 }
 
-span{
-  color: #ffffff;
+.headerText{
   font-size: 32px;
 }
 
@@ -45,5 +53,6 @@ span{
   width: 40px;
   height: 40px;
   margin-left: 200px;
+  margin-right: 50%;
 }
 </style>

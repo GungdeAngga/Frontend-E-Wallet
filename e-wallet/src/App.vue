@@ -1,9 +1,16 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <v-main>
+      <router-view/>
+    </v-main>
 </template>
 
-<style>
-  
-</style>
+<script>
+
+export default {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+};
+</script>
