@@ -12,14 +12,12 @@ import HeaderWeb from "@/components/HeaderWeb.vue";
 import FooterMenuWeb from "../components/FooterMenuWeb.vue";
 import ContentTopup from "../components/ContentTopup.vue";
 
-
 export default {
   name: "HomePage",
   components: {
     HeaderWeb,
     FooterMenuWeb,
     ContentTopup
-},
+  },
 };
-
 </script>
