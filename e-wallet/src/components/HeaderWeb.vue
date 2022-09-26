@@ -6,7 +6,7 @@
           color="#4E45CE"
           padless
           dark
-          style="height: 140px;"
+          style="height: 125px;"
         >
           <div class="header">
             <span class="headerText">Corsair</span>

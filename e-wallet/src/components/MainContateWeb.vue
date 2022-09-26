@@ -1,29 +1,34 @@
 <template>
     <div class="MainContent">
-        <div class="Content">
-            <span class="text">Account Balance</span><br> 
-            <span class="balance">Rp 1.000.000</span> 
+        <div class="bgContent">
+            <div class="Content">
+                <span class="text">Account Balance</span><br> 
+                <span class="balance">Rp 1.000.000</span> 
 
-            <div class="btn-group" style="width:100%">
+                <div class="btn-group" style="width:100%">
 
-                <router-link to="/" tag="button" class="btn" >
-                    <img src="@/assets/image/add-free-icon-font.png" alt="topup" style="height: 65%;">
-                    <span class="caption">Topup</span>
-                </router-link>
+                    <router-link to="/" tag="button" class="btn" >
+                        <img src="@/assets/image/add-free-icon-font.png" alt="topup" style="height: 65%;">
+                        <span class="caption">Topup</span>
+                    </router-link>
 
-                <router-link to="/" tag="button" class="btn" >
-                    <img src="@/assets/image/paper-plane-free-icon-font.png" alt="transfer" style="height: 65%;">
-                    <span class="caption">Transfer</span>
-                </router-link>
+                    <router-link to="/" tag="button" class="btn" >
+                        <img src="@/assets/image/paper-plane-free-icon-font.png" alt="transfer" style="height: 65%;">
+                        <span class="caption">Transfer</span>
+                    </router-link>
 
-                <router-link to="/" tag="button" class="btn" >
-                    <img src="@/assets/image/money-bill-wave-free-icon-font.png" alt="withdraw" style="height: 65%;">
-                    <span class="caption">withdraw</span>
-                </router-link>
+                    <router-link to="/" tag="button" class="btn" >
+                        <img src="@/assets/image/money-bill-wave-free-icon-font.png" alt="withdraw" style="height: 65%;">
+                        <span class="caption">withdraw</span>
+                    </router-link>
+
+                </div>
 
             </div>
-          </div>
+
         </div>
+
+    </div>
 
 
 
@@ -35,10 +40,14 @@
 </script>
 
 <style>
-.MainContent{
-    background-color: #484848;
+#MainContent{
+
     height: 100%;
     display: flex;
+}
+
+.bgContent{
+    background-color: #484848;
 }
 
 .Content{
@@ -46,6 +55,7 @@
     margin: auto;
     padding: 30px;
     padding-top: 60px;
+    padding-bottom: 473px;
     width: 600px;
     height: 100%;
 }
