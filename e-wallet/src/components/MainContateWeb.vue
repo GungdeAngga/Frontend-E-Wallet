@@ -4,10 +4,24 @@
             <div class="Content">
 
 <!--isi apollo query-->
+                <ApolloQuery
+                :query="gql => gql`
+                    query MyQuery {
+                    tabel_account_balance(where: {}) {
+                        id
+                        uang
+                    }
+
+                    }`"
+                    
+                    >
+                <template v-slot="{ result: {  data } }">
 
                 <span class="text">Account Balance</span><br> 
-                <span class="balance">Rp 1.000.000</span> <!--yg di ubah ke apollo query-->
+                <span class="balance">Rp {{ data.tabel_account_balance[0].uang }}</span> <!--yg di ubah ke apollo query-->
 
+                </template>
+                </ApolloQuery>
 <!--penutup apollo query-->
 
                 <div class="btn-group" style="width:100%">

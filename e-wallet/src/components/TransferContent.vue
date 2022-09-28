@@ -4,10 +4,24 @@
             <div class="ContentTransferView">
 
 <!--isi apollo query-->
+                <ApolloQuery
+                :query="gql => gql`
+                    query MyQuery {
+                    tabel_account_balance(where: {}) {
+                        id
+                        uang
+                    }
 
+                    }`"
+                    
+                    >
+                <template v-slot="{ result: {  data } }">
+                    
                 <span class="textTransfer">Transfer</span><br> 
-                <span class="balanceTransfer">Cash: Rp 1.000.000</span> <br/><br/><!--yg di ubah ke apollo query-->
+                <span class="balanceTransfer">Cash: Rp {{ data.tabel_account_balance[0].uang }}</span> <br/><br/><!--yg di ubah ke apollo query-->
 
+                </template>
+                </ApolloQuery>
 <!--penutup apollo query-->
 
 

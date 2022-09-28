@@ -4,10 +4,24 @@
             <div class="ContentWithdrawView">
 
 <!--isi apollo query-->
+<ApolloQuery
+                :query="gql => gql`
+                    query MyQuery {
+                    tabel_account_balance(where: {}) {
+                        id
+                        uang
+                    }
 
-                <span class="textWithdraw">Withdraw</span><br> 
-                <span class="balanceWithdraw">Cash: Rp 1.000.000</span> <br/><br/><!--yg di ubah ke apollo query-->
+                    }`"
+                    
+                    >
+                <template v-slot="{ result: {  data } }">
+                    
+                <span class="textTransfer">Withdraw</span><br> 
+                <span class="balanceTransfer">Cash: Rp {{ data.tabel_account_balance[0].uang }}</span> <br/><br/><!--yg di ubah ke apollo query-->
 
+                </template>
+                </ApolloQuery>
 <!--penutup apollo query-->
 
                 <!--nambah jumlah uang sesuai yang user mau-->

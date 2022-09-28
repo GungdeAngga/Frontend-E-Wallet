@@ -1,7 +1,7 @@
 <template>
     <div class="TopUpPage">
     <HeaderWeb />
-    <ContentTopup />
+    <TopupContent />
     <FooterMenuWeb />
 
     </div>
@@ -10,14 +10,15 @@
 <script>
 import HeaderWeb from "@/components/HeaderWeb.vue";
 import FooterMenuWeb from "../components/FooterMenuWeb.vue";
-import ContentTopup from "../components/ContentTopup.vue";
+import TopupContent from "@/components/TopupContent.vue";
+
 
 export default {
   name: "HomePage",
   components: {
     HeaderWeb,
     FooterMenuWeb,
-    ContentTopup
-  },
+    TopupContent
+},
 };
 </script>
