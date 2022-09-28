@@ -2,8 +2,13 @@
     <div class="MainContent">
         <div class="bgContent">
             <div class="Content">
+
+<!--isi apollo query-->
+
                 <span class="text">Account Balance</span><br> 
-                <span class="balance">Rp 1.000.000</span> 
+                <span class="balance">Rp 1.000.000</span> <!--yg di ubah ke apollo query-->
+
+<!--penutup apollo query-->
 
                 <div class="btn-group" style="width:100%">
 
