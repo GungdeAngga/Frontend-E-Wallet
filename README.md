@@ -1,3 +1,3 @@
-# Blockchain-E-Wallet
+# Frontend-E-Wallet
 
-E-wallet dengan teknologi blockchain 
+Frontend dari e-wallet yang di gunakan untuk program skripsi 
