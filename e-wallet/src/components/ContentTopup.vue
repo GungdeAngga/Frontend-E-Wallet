@@ -1,12 +1,22 @@
 <template>
     <div class="ContentTopup">
+
         <div class="bgContentTopup">
+
             <div class="ContentTopupView">
+
+<!--isi apollo query-->
+
                 <span class="textTopup">Topup</span><br> 
-                <span class="balanceTopup">Cash: Rp 1.000.000</span> <br/><br/>
+                <span class="balanceTopup">Cash: Rp 1.000.000</span> <br/><br/><!--yg di ubah ke apollo query-->
+
+<!--penutup apollo query-->
+
 
                 <!--nambah jumlah uang sesuai yang user mau-->
-                <input type="tel" id="topup" name="topup" min="0" v-model="money" placeholder="Rp 0">  
+                <div class="error" v-if="!isValid">Please use number only</div>
+                <input type="text" id="topup" name="topup" min="0" v-model="topup" placeholder="Rp 0" @input="change($event)"
+                @change="change($event)">  
 
                 <span style="margin-left:33%">   
                 <v-btn depressed large
@@ -28,7 +38,25 @@
 </template>
 
 <script>
-
+export default {
+    name: "ValidateNumber",
+    data() {
+    return {
+        topup: "",
+        isValid: true,
+        regex: /[0-9]/
+        };
+    },
+    methods: {
+        change:function(e){
+            const number = e.target.value
+            this.isNumberValid(number);
+        },
+        isNumberValid: function(inputNumber) {
+            this.isValid=   this.regex.test(inputNumber)
+        }
+    },
+};
 </script>
 
 <style scopped>
@@ -63,7 +91,7 @@ span{
     font-size: 30px;
 }
 
-input[type=tel], select {
+input[type=text], select {
   width: 100%;
   padding: 35px 20px;
   margin: 8px 0;
@@ -81,4 +109,7 @@ input[type=tel], select {
   font-size: 40px;
 }
 
+.error{
+  color:red;
+}
 </style>

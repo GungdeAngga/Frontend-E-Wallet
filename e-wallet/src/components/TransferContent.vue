@@ -2,11 +2,19 @@
     <div class="ContentTransfer">
         <div class="bgContentTransfer">
             <div class="ContentTransferView">
-                <span class="textTransfer">Topup</span><br> 
-                <span class="balanceTransfer">Cash: Rp 1.000.000</span> <br/><br/>
+
+<!--isi apollo query-->
+
+                <span class="textTransfer">Transfer</span><br> 
+                <span class="balanceTransfer">Cash: Rp 1.000.000</span> <br/><br/><!--yg di ubah ke apollo query-->
+
+<!--penutup apollo query-->
+
 
                 <!--nambah jumlah uang sesuai yang user mau-->
-                <input type="tel" id="transfer" name="topup" min="0" v-model="money" placeholder="Rp 0">  
+                <div class="error" v-if="!isValid">Please use number only</div>
+                <input type="text" id="topup" name="topup" min="0" v-model="transfer" placeholder="Rp 0" @input="change($event)"
+                @change="change($event)">  
 
                 <span style="margin-left:33%">   
                 <v-btn depressed large
@@ -28,7 +36,25 @@
 </template>
 
 <script>
-
+export default {
+    name: "ValidateNumber",
+    data() {
+    return {
+        transfer: "",
+        isValid: true,
+        regex: /[0-9]/
+        };
+    },
+    methods: {
+        change:function(e){
+            const number = e.target.value
+            this.isNumberValid(number);
+        },
+        isNumberValid: function(inputNumber) {
+            this.isValid=   this.regex.test(inputNumber)
+        }
+    },
+};
 </script>
 
 <style scopped>
