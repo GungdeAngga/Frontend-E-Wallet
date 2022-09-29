@@ -1,14 +1,14 @@
 <template>
 
 
-    <div>
+    <div class="headerWeb">
         <v-app-bar
           color="#4E45CE"
           padless
           dark
           style="height: 125px;"
         >
-          <div class="header">
+          <div class="headerContent">
             <span class="headerText">Corsair</span>
 
             <v-spacer></v-spacer>
@@ -34,7 +34,13 @@ name: "HeaderWeb",
 </script>
 
 <style scoped>
-.header{
+#headerWeb{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.headerContent{
   width: 100%;
   display: flex;
   padding-top: 50px;
