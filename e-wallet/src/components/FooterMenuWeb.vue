@@ -34,7 +34,8 @@
 <style scoped>
 #footer{
   position: absolute; 
-  bottom:0; 
+  bottom:0;
+  left: 0; 
   width:100%;
   
 }
