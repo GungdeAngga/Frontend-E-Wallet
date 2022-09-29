@@ -3,17 +3,15 @@
         <div class="bgContentWithdraw">
             <div class="ContentWithdrawView">
 
-<!--isi apollo query-->
-<ApolloQuery
+                <!--isi apollo query-->
+                <ApolloQuery
                 :query="gql => gql`
                     query MyQuery {
                     tabel_account_balance(where: {}) {
                         id
                         uang
-                    }
-
+                        }
                     }`"
-                    
                     >
                 <template v-slot="{ result: {  data } }">
                     
@@ -22,12 +20,12 @@
 
                 </template>
                 </ApolloQuery>
-<!--penutup apollo query-->
+                <!--penutup apollo query-->
 
-                <!--nambah jumlah uang sesuai yang user mau-->
+                <!--apollo mutation-->
                 <div class="error" v-if="!isValid">Please use number only</div>
                 <input type="text" id="topup" name="topup" min="0" v-model="withdraw" placeholder="Rp 0" @input="change($event)"
-                @change="change($event)">  
+                @change="change($event)">  <!--nambah jumlah uang sesuai yang user mau-->
 
                 <span style="margin-left:33%">   
                 <v-btn depressed large
@@ -36,6 +34,7 @@
                 height="55px">
                     Withdraw
                 </v-btn></span>
+                <!--apollo mutation-->
 
             </div>
 
@@ -66,6 +65,7 @@ export default {
         isNumberValid: function(inputNumber) {
             this.isValid=   this.regex.test(inputNumber)
         }
+        
     },
 };
 </script>
