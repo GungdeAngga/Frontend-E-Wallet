@@ -3,6 +3,7 @@
         <div class="bgContentWithdraw">
             <div class="ContentWithdrawView">
 
+                <span class="textTransfer">Withdraw</span><br> 
                 <!--isi apollo query-->
                 <ApolloQuery
                 :query="gql => gql`
@@ -14,8 +15,6 @@
                     }`"
                     >
                 <template v-slot="{ result: {  data } }">
-                    
-                <span class="textTransfer">Withdraw</span><br> 
                 <span class="balanceTransfer">Cash: Rp {{ data.tabel_account_balance[0].uang }}</span> <br/><br/><!--yg di ubah ke apollo query-->
 
                 </template>
@@ -85,9 +84,8 @@ export default {
     background: #2C2D30;
     margin: auto;
     padding: 30px;
-    padding-bottom: 406px;
     width: 600px;
-    height: 100%;
+    min-height: 74.9vh;
 }
 
 span{

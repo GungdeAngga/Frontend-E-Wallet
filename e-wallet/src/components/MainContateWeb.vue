@@ -3,6 +3,7 @@
         <div class="bgContent">
             <div class="Content">
 
+                <span class="text">Account Balance</span><br> 
 <!--isi apollo query-->
                 <ApolloQuery
                 :query="gql => gql`
@@ -16,8 +17,6 @@
                     
                     >
                 <template v-slot="{ result: {  data } }">
-
-                <span class="text">Account Balance</span><br> 
                 <span class="balance">Rp {{ data.tabel_account_balance[0].uang }}</span> <!--yg di ubah ke apollo query-->
 
                 </template>
@@ -74,9 +73,8 @@
     margin: auto;
     padding: 30px;
     padding-top: 60px;
-    padding-bottom: 473px;
     width: 600px;
-    height: 100%;
+    min-height: 74.9vh;
 }
 
 span{
