@@ -60,9 +60,8 @@
     margin: auto;
     padding: 30px;
     padding-top: 60px;
-    padding-bottom: 473px;
     width: 600px;
-    height: 100%;
+    min-height: 74.9vh;
 }
 
 span{
