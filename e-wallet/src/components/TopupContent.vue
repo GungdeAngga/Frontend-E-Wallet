@@ -25,7 +25,7 @@
 
 
                 <!--apollo mutation-->
-                <div class="error" v-if="!isValid">Please use number only</div>
+                <div class="errorInput" v-if="!isValid">Please use number only</div>
                 <input type="text" id="topup" name="topup" min="0" v-model="topup" placeholder="Rp 0" @input="change($event)"
                 @change="change($event)">  <!--nambah jumlah uang sesuai yang user mau-->
 
@@ -121,7 +121,7 @@ input[type=text], select {
   font-size: 40px;
 }
 
-.error{
+.errorInput{
   color:red;
 }
 </style>
