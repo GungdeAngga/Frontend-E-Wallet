@@ -6,8 +6,9 @@
             <div class="ContentTopupView">
 
                 <span class="textTransfer">Topup</span><br> 
+
                 <!--isi apollo query-->
-                <ApolloQuery
+               <ApolloQuery
                 :query="gql => gql`
                     query MyQuery {
                     tabel_account_balance(where: {}) {
@@ -17,25 +18,49 @@
                     }`"
                     >
                 <template v-slot="{ result: {  data } }">
-                <span class="balanceTransfer">Cash: Rp {{ data.tabel_account_balance[0].uang }}</span> <br/><br/><!--yg di ubah ke apollo query-->
-
+                <span class="balanceTransfer">Cash: Rp {{ data.tabel_account_balance[0].uang }}</span> <br/><br/> 
                 </template>
-                </ApolloQuery>
+                </ApolloQuery> -->
                 <!--penutup apollo query-->
 
+                <div class="errorInput" v-if="!isValid">Please use number only</div>
 
                 <!--apollo mutation-->
-                <div class="errorInput" v-if="!isValid">Please use number only</div>
-                <input type="text" id="topup" name="topup" min="0" v-model="topup" placeholder="Rp 0" @input="change($event)"
+
+                <apolloMutation
+                :mutation="(gql) => gql`
+                    mutation MyMutation($uang: numeric = ) {
+                    update_tabel_account_balance_by_pk(pk_columns: {id: 1}, _inc: {uang: $uang}) {
+                        id
+                        uang
+                    }
+                    }`"
+                :variables="{ id: uang.id, name: topup }"
+                :refetchQueries="refetchQueriesAfterMyMutation"
+                >
+                <template v-slot="{ mutate, loading, error }">
+                <input 
+                type="text" 
+                min="0" 
+                v-model="topup" 
+                placeholder="Rp 0" 
+                @keyup.enter="mutate()"
+                @input="change($event)"
                 @change="change($event)">  <!--nambah jumlah uang sesuai yang user mau-->
 
                 <span style="margin-left:33%">   
                 <v-btn depressed large
                 dark color="#4E45CE"
                 width="185px"
-                height="55px">
+                height="55px"
+                :disabled="loading"
+                @click="mutate()">
                     Topup
                 </v-btn></span>
+                <p v-if="error">An error occurred: {{ error }}</p>
+                </template>
+                </apolloMutation>
+
                 <!--apollo mutation-->
 
             </div>
@@ -50,14 +75,38 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
+
 export default {
     name: "ValidateNumber",
+    props: {
+        uang: Object,
+    },
     data() {
     return {
         topup: "",
         isValid: true,
         regex: /[0-9]/
         };
+    },
+     mounted() {
+        this.topup = this.uang.body;
+    },
+    computed: {
+    refetchQueriesAfterMyMutation() {
+      return [
+            {
+            query: gql`
+                query MyQuery {
+                    tabel_account_balance {
+                    id
+                    uang
+                }
+                }
+            `,
+            },
+        ];
+        },
     },
     methods: {
         change:function(e){
