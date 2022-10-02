@@ -28,14 +28,14 @@
                 <!--apollo mutation-->
 
                 <apolloMutation
-                :mutation="(gql) => gql`
-                    mutation MyMutation($uang: numeric = ) {
-                    update_tabel_account_balance_by_pk(pk_columns: {id: 1}, _inc: {uang: $uang}) {
+                :mutation="gql => gql`
+                    mutation MyMutation($id: int!, $uang: bigint! ) {
+                    update_tabel_account_balance_by_pk(pk_columns: {id: $id}, _inc: {uang: $uang}) {
                         id
                         uang
                     }
                     }`"
-                :variables="{ id: uang.id, name: topup }"
+                :variables="{ id: uang.id, uang: topup }"
                 :refetchQueries="refetchQueriesAfterMyMutation"
                 >
                 <template v-slot="{ mutate, loading, error }">
@@ -60,7 +60,7 @@
                 <p v-if="error">An error occurred: {{ error }}</p>
                 </template>
                 </apolloMutation>
-
+                
                 <!--apollo mutation-->
 
             </div>

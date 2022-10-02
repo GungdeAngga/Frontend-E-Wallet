@@ -1,9 +1,10 @@
-import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost'
 import Vue from 'vue'
-import VueApollo from 'vue-apollo'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
+
+import VueApollo from 'vue-apollo'
+import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost'
 
 Vue.config.productionTip = false
 
